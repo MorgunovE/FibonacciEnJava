@@ -1,14 +1,29 @@
 import utils.FibonaciClassique;
 import utils.FibonacciRecursive;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Entrez le nombre de termes de la suite de Fibonacci à afficher :");
-        int nombreDeTermes = scanner.nextInt();
-        scanner.close();
+        int nombreDeTermes = 0;
+
+        try {
+            System.out.println("Entrez le nombre de termes de la suite de Fibonacci à afficher :");
+            nombreDeTermes = scanner.nextInt();
+            if (nombreDeTermes < 0) {
+                throw new IllegalArgumentException("Le nombre de termes doit être un nombre positif.");
+            }
+        } catch (InputMismatchException e) {
+            System.err.println("Entrée invalide. Veuillez entrer un nombre entier.");
+            return;
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+            return;
+        } finally {
+            scanner.close();
+        }
 
         long durationClassique = 0;
         long durationRecursive = 0;
