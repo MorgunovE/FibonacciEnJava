@@ -3,6 +3,9 @@ package com.projet.fibonacci;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * La classe principale qui exécute le programme, compare le temps d'exécution des deux méthodes et affiche les résultats.
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -24,42 +27,34 @@ public class Main {
             scanner.close();
         }
 
-        afficherFibonacciIteratif(nombreDeTermes);
-        afficherFibonacciRecursif(nombreDeTermes);
+        afficherFibonacci("itérative", nombreDeTermes, FibonacciIteratif::calculer);
+        afficherFibonacci("récursive", nombreDeTermes, n -> {
+            int[] fibNombres = new int[n];
+            for (int i = 0; i < n; i++) {
+                fibNombres[i] = FibonacciRecursif.calculer(i);
+            }
+            return fibNombres;
+        });
     }
 
-    private static void afficherFibonacciIteratif(int nombreDeTermes) {
+    private static void afficherFibonacci(String methode, int nombreDeTermes, CalculateurFibonacci calculateur) {
         Chronometre chronometre = new Chronometre();
         chronometre.demarrer();
-        int[] fibNombres = FibonacciIteratif.calculer(nombreDeTermes);
+        int[] fibNombres = calculateur.calculer(nombreDeTermes);
         chronometre.arreter();
         long duree = chronometre.getDureeMicrosecondes();
 
         System.out.println("----------------------------------------");
-        System.out.println("Suite de Fibonacci avec la méthode itérative :");
+        System.out.println("Suite de Fibonacci avec la méthode " + methode + " :");
         for (int i = 0; i < nombreDeTermes; i++) {
             System.out.print(fibNombres[i] + " ");
         }
-        System.out.println("\nDurée de la méthode itérative : " + duree + " microsecondes");
+        System.out.println("\nDurée de la méthode " + methode + " : " + duree + " microsecondes");
         System.out.println("----------------------------------------");
     }
 
-    private static void afficherFibonacciRecursif(int nombreDeTermes) {
-        Chronometre chronometre = new Chronometre();
-        chronometre.demarrer();
-        int[] fibNombres = new int[nombreDeTermes];
-        for (int i = 0; i < nombreDeTermes; i++) {
-            fibNombres[i] = FibonacciRecursif.calculer(i);
-        }
-        chronometre.arreter();
-        long duree = chronometre.getDureeMicrosecondes();
-
-        System.out.println("----------------------------------------");
-        System.out.println("Suite de Fibonacci avec la méthode récursive :");
-        for (int i = 0; i < nombreDeTermes; i++) {
-            System.out.print(fibNombres[i] + " ");
-        }
-        System.out.println("\nDurée de la méthode récursive : " + duree + " microsecondes");
-        System.out.println("----------------------------------------");
+    @FunctionalInterface
+    interface CalculateurFibonacci {
+        int[] calculer(int n);
     }
 }
