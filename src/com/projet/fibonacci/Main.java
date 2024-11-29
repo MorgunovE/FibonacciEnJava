@@ -27,14 +27,18 @@ public class Main {
             scanner.close();
         }
 
-        afficherFibonacci("itérative", nombreDeTermes, FibonacciIteratif::calculer);
-        afficherFibonacci("récursive", nombreDeTermes, n -> {
-            int[] fibNombres = new int[n];
-            for (int i = 0; i < n; i++) {
-                fibNombres[i] = FibonacciRecursif.calculer(i);
-            }
-            return fibNombres;
-        });
+        try {
+            afficherFibonacci("itérative", nombreDeTermes, FibonacciIteratif::calculer);
+            afficherFibonacci("récursive", nombreDeTermes, n -> {
+                int[] fibNombres = new int[n];
+                for (int i = 0; i < n; i++) {
+                    fibNombres[i] = FibonacciRecursif.calculer(i);
+                }
+                return fibNombres;
+            });
+        } catch (Exception e) {
+            System.err.println("Une erreur s'est produite lors du calcul de la suite de Fibonacci : " + e.getMessage());
+        }
     }
 
     private static void afficherFibonacci(String methode, int nombreDeTermes, CalculateurFibonacci calculateur) {

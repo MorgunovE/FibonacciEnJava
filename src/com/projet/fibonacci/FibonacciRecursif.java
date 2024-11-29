@@ -11,8 +11,12 @@ public class FibonacciRecursif {
      *
      * @param n le terme de la suite de Fibonacci à calculer
      * @return le n-ième terme de la suite de Fibonacci
+     * @throws IllegalArgumentException si n est négatif
      */
     public static int calculer(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Le terme de la suite de Fibonacci ne peut pas être négatif.");
+        }
         if (n <= 1) {
             return n;
         }
