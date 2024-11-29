@@ -6,7 +6,7 @@ Ce projet démontre deux méthodes pour calculer la suite de Fibonacci en Java :
 
 - `src/utils/FibonacciRecursive.java` : Contient la classe `FibonacciRecursive` qui calcule la suite de Fibonacci en utilisant une méthode récursive.
 - `src/utils/FibonaciClassique.java` : Contient la classe `FibonaciClassique` qui calcule la suite de Fibonacci en utilisant une méthode itérative.
-- `src/Main.java` : La classe principale qui exécute le programme, compare le temps d'exécution des deux méthodes et affiche les résultats.
+- `src/com.projet.fibonacci.Main.java` : La classe principale qui exécute le programme, compare le temps d'exécution des deux méthodes et affiche les résultats.
 
 ## Utilisation
 
@@ -18,12 +18,12 @@ Ce projet démontre deux méthodes pour calculer la suite de Fibonacci en Java :
 
 2. **Compiler le projet** :
     ```sh
-    javac -d bin src/utils/*.java src/Main.java
+    javac -d bin src/utils/*.java src/com.projet.fibonacci.Main.java
     ```
 
 3. **Exécuter le projet** :
     ```sh
-    java -cp bin Main
+    java -cp bin com.projet.fibonacci.Main
     ```
 
 4. **Suivre les instructions** pour entrer le nombre de termes de la suite de Fibonacci que vous souhaitez calculer.

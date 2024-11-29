@@ -1,10 +1,10 @@
-package utils;
+package com.projet.fibonacci;
 
 /**
- * La classe FibonacciRecursive fournit une méthode pour calculer la suite de Fibonacci
+ * La classe FibonacciRecursif fournit une méthode pour calculer la suite de Fibonacci
  * en utilisant une approche récursive.
  */
-public class FibonacciRecursive {
+public class FibonacciRecursif {
 
     /**
      * Calcule le n-ième terme de la suite de Fibonacci de manière récursive.
@@ -12,10 +12,10 @@ public class FibonacciRecursive {
      * @param n le terme de la suite de Fibonacci à calculer
      * @return le n-ième terme de la suite de Fibonacci
      */
-    public static int fibonacci(int n) {
+    public static int calculer(int n) {
         if (n <= 1) {
             return n;
         }
-        return fibonacci(n - 1) + fibonacci(n - 2);
+        return calculer(n - 1) + calculer(n - 2);
     }
 }
