@@ -13,7 +13,7 @@ public class FibonacciIteratif {
      * @return un tableau contenant la suite de Fibonacci jusqu'au nombre de termes spécifié
      * @throws IllegalArgumentException si n est négatif
      */
-    public static int[] calculer(int n) {
+    public static int[] calculerSuiteFibonacci(int n) {
         if (n < 0) {
             throw new IllegalArgumentException("Le nombre de termes de la suite de Fibonacci ne peut pas être négatif.");
         }

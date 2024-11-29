@@ -18,7 +18,7 @@ public class FibonacciRecursif {
      * @return le n-ième terme de la suite de Fibonacci
      * @throws IllegalArgumentException si n est négatif
      */
-    public static int calculer(int n) {
+    public static int calculerFibonacci(int n) {
         if (n < 0) {
             throw new IllegalArgumentException("Le terme de la suite de Fibonacci ne peut pas être négatif.");
         }
@@ -28,7 +28,7 @@ public class FibonacciRecursif {
         if (memo.containsKey(n)) {
             return memo.get(n);
         }
-        int result = calculer(n - 1) + calculer(n - 2);
+        int result = calculerFibonacci(n - 1) + calculerFibonacci(n - 2);
         memo.put(n, result);
         return result;
     }

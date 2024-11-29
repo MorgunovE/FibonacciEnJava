@@ -28,11 +28,11 @@ public class Main {
         }
 
         try {
-            afficherFibonacci("itérative", nombreDeTermes, FibonacciIteratif::calculer);
-            afficherFibonacci("récursive", nombreDeTermes, n -> {
+            afficherSuiteFibonacci("itérative", nombreDeTermes, FibonacciIteratif::calculerSuiteFibonacci);
+            afficherSuiteFibonacci("récursive", nombreDeTermes, n -> {
                 int[] fibNombres = new int[n];
                 for (int i = 0; i < n; i++) {
-                    fibNombres[i] = FibonacciRecursif.calculer(i);
+                    fibNombres[i] = FibonacciRecursif.calculerFibonacci(i);
                 }
                 return fibNombres;
             });
@@ -41,7 +41,7 @@ public class Main {
         }
     }
 
-    private static void afficherFibonacci(String methode, int nombreDeTermes, CalculateurFibonacci calculateur) {
+    private static void afficherSuiteFibonacci(String methode, int nombreDeTermes, CalculateurFibonacci calculateur) {
         Chronometre chronometre = new Chronometre();
         chronometre.demarrer();
         int[] fibNombres = calculateur.calculer(nombreDeTermes);
