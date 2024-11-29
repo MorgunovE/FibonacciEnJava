@@ -30,7 +30,7 @@ public class Main {
         try {
             afficherSuiteFibonacci("itérative", nombreDeTermes, FibonacciIteratif::calculerSuiteFibonacci);
             afficherSuiteFibonacci("récursive", nombreDeTermes, n -> {
-                int[] fibNombres = new int[n];
+                long[] fibNombres = new long[n];
                 for (int i = 0; i < n; i++) {
                     fibNombres[i] = FibonacciRecursif.calculerFibonacci(i);
                 }
@@ -44,7 +44,7 @@ public class Main {
     private static void afficherSuiteFibonacci(String methode, int nombreDeTermes, CalculateurFibonacci calculateur) {
         Chronometre chronometre = new Chronometre();
         chronometre.demarrer();
-        int[] fibNombres = calculateur.calculer(nombreDeTermes);
+        long[] fibNombres = calculateur.calculer(nombreDeTermes);
         chronometre.arreter();
         long duree = chronometre.getDureeMicrosecondes();
 
@@ -59,6 +59,6 @@ public class Main {
 
     @FunctionalInterface
     interface CalculateurFibonacci {
-        int[] calculer(int n);
+        long[] calculer(int n);
     }
 }

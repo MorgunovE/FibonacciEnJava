@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class FibonacciRecursif {
 
-    private static Map<Integer, Integer> memo = new HashMap<>();
+    private static Map<Integer, Long> memo = new HashMap<>();
 
     /**
      * Calcule le n-ième terme de la suite de Fibonacci de manière récursive avec mémoïsation.
@@ -18,7 +18,7 @@ public class FibonacciRecursif {
      * @return le n-ième terme de la suite de Fibonacci
      * @throws IllegalArgumentException si n est négatif
      */
-    public static int calculerFibonacci(int n) {
+    public static long calculerFibonacci(int n) {
         if (n < 0) {
             throw new IllegalArgumentException("Le terme de la suite de Fibonacci ne peut pas être négatif.");
         }
@@ -28,7 +28,7 @@ public class FibonacciRecursif {
         if (memo.containsKey(n)) {
             return memo.get(n);
         }
-        int result = calculerFibonacci(n - 1) + calculerFibonacci(n - 2);
+        long result = calculerFibonacci(n - 1) + calculerFibonacci(n - 2);
         memo.put(n, result);
         return result;
     }
