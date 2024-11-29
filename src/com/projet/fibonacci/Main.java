@@ -37,7 +37,7 @@ public class Main {
                 return fibNombres;
             });
         } catch (Exception e) {
-            System.err.println("Une erreur s'est produite lors du calcul de la suite de Fibonacci : " + e.getMessage());
+            System.err.println("Une erreur s'est produite lors du calcul de la suite de Fibonacci.");
         }
     }
 
