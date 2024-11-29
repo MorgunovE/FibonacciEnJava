@@ -2,7 +2,7 @@ package com.projet.fibonacci;
 
 /**
  * La classe FibonacciIteratif fournit une méthode pour calculer la suite de Fibonacci
- * en utilisant une approche itérative.
+ * en utilisant une approche itérative optimisée.
  */
 public class FibonacciIteratif {
 
