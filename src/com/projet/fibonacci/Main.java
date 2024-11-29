@@ -50,10 +50,8 @@ public class Main {
 
         System.out.println("----------------------------------------");
         System.out.println("Suite de Fibonacci avec la méthode " + methode + " :");
-        for (int i = 0; i < nombreDeTermes; i++) {
-            System.out.print(fibNombres[i] + " ");
-        }
-        System.out.println("\nDurée de la méthode " + methode + " : " + duree + " microsecondes");
+        FormatteurSortie.afficher(fibNombres);
+        System.out.println("Durée de la méthode " + methode + " : " + duree + " microsecondes");
         System.out.println("----------------------------------------");
     }
 
