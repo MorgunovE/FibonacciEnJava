@@ -2,6 +2,9 @@ package com.projet.fibonacci.vue;
 
 import java.math.BigInteger;
 
+/**
+ * Classe pour formater et afficher la suite de Fibonacci.
+ */
 public class FormatteurSortie {
 
     public static void afficher(BigInteger[] suite) {

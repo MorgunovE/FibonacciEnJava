@@ -4,8 +4,14 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Classe pour calculer la suite de Fibonacci de manière récursive.
+ */
 public class FibonacciRecursif implements CalculateurFibonacci {
 
+    /**
+     * Mémoisation pour stocker les résultats intermédiaires des calculs.
+     */
     private static Map<Integer, BigInteger> memo = new HashMap<>();
 
     @Override

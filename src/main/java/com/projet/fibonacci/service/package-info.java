@@ -1,4 +1,4 @@
 /**
- * Package contenant les services de l'application.
+ * Contient les services pour le projet Fibonacci.
  */
 package com.projet.fibonacci.service;

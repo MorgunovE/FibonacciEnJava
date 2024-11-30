@@ -3,9 +3,19 @@ package com.projet.fibonacci.service;
 import com.projet.fibonacci.controleur.ControleurFibonacci;
 import com.projet.fibonacci.modele.Chronometre;
 
+/**
+ * Service pour gérer les opérations liées à la suite de Fibonacci.
+ */
 public class FibonacciService {
 
+    /**
+     * Contrôleur pour gérer l'affichage de la suite de Fibonacci.
+     */
     private final ControleurFibonacci controller;
+
+    /**
+     * Chronomètre pour mesurer la durée d'exécution.
+     */
     private final Chronometre chronometre;
 
     public FibonacciService() {
@@ -35,7 +45,6 @@ public class FibonacciService {
         chronometre.arreter();
         long dureeIterative = chronometre.getDureeMicrosecondes();
         System.out.println("Durée de la méthode itérative : " + dureeIterative + " microsecondes");
-
 
         System.out.println("##################### Méthode récursive ####################");
         chronometre.demarrer();

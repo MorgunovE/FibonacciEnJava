@@ -7,8 +7,14 @@ import com.projet.fibonacci.vue.FormatteurSortie;
 
 import java.math.BigInteger;
 
+/**
+ * Contrôleur pour gérer les calculs et l'affichage de la suite de Fibonacci.
+ */
 public class ControleurFibonacci {
 
+    /**
+     * Calculateur de la suite de Fibonacci.
+     */
     private CalculateurFibonacci calculateur;
 
     public void setCalculateur(CalculateurFibonacci calculateur) {
