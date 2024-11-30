@@ -5,12 +5,21 @@ import com.projet.fibonacci.service.FibonacciService;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-/**
- * Application principale pour exécuter le programme de calcul de la suite de Fibonacci.
- */
 public class FibonacciApp {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+
+    private final Scanner scanner;
+    private final FibonacciService service;
+
+    public FibonacciApp() {
+        this(new Scanner(System.in), new FibonacciService());
+    }
+
+    public FibonacciApp(Scanner scanner, FibonacciService service) {
+        this.scanner = scanner;
+        this.service = service;
+    }
+
+    public void run() {
         int nombreDeTermes = 0;
 
         try {
@@ -31,7 +40,10 @@ public class FibonacciApp {
             scanner.close();
         }
 
-        FibonacciService service = new FibonacciService();
         service.comparerMethodes(nombreDeTermes);
+    }
+
+    public static void main(String[] args) {
+        new FibonacciApp().run();
     }
 }

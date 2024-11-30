@@ -9,8 +9,12 @@ public class FibonacciService {
     private final Chronometre chronometre;
 
     public FibonacciService() {
-        this.controller = new ControleurFibonacci();
-        this.chronometre = new Chronometre();
+        this(new ControleurFibonacci(), new Chronometre());
+    }
+
+    public FibonacciService(ControleurFibonacci controller, Chronometre chronometre) {
+        this.controller = controller;
+        this.chronometre = chronometre;
     }
 
     public void afficherSuite(String methode, int nombreDeTermes) {
