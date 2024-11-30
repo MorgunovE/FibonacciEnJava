@@ -3,11 +3,12 @@ package com.projet.fibonacci.model;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FibonacciRecursif {
+public class FibonacciRecursif implements FibonacciCalculateur {
 
     private static Map<Integer, Long> memo = new HashMap<>();
 
-    public static long calculer(int terme) {
+    @Override
+    public long calculer(int terme) {
         if (terme < 0) {
             throw new IllegalArgumentException("Le terme de la suite de Fibonacci ne peut pas être négatif.");
         }

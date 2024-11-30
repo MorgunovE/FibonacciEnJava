@@ -1,8 +1,29 @@
 package com.projet.fibonacci.model;
 
-public class FibonacciIteratif {
+public class FibonacciIteratif implements FibonacciCalculateur {
 
-    public static long[] calculerSuite(int nombreDeTermes) {
+    @Override
+    public long calculer(int terme) {
+        if (terme < 0) {
+            throw new IllegalArgumentException("Le terme de la suite de Fibonacci ne peut pas être négatif.");
+        }
+        if (terme == 0) {
+            return 0;
+        }
+        if (terme == 1) {
+            return 1;
+        }
+        long a = 0, b = 1;
+        for (int i = 2; i <= terme; i++) {
+            long temp = a + b;
+            a = b;
+            b = temp;
+        }
+        return b;
+    }
+
+    @Override
+    public long[] calculerSuite(int nombreDeTermes) {
         if (nombreDeTermes < 0) {
             throw new IllegalArgumentException("Le nombre de termes de la suite de Fibonacci ne peut pas être négatif.");
         }
