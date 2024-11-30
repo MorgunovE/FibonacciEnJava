@@ -4,6 +4,8 @@ import com.projet.fibonacci.modele.CalculateurFibonacci;
 import com.projet.fibonacci.modele.FibonacciIteratif;
 import com.projet.fibonacci.modele.FibonacciRecursif;
 import com.projet.fibonacci.vue.FormatteurSortie;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.math.BigInteger;
 
@@ -11,6 +13,8 @@ import java.math.BigInteger;
  * Contrôleur pour gérer les calculs et l'affichage de la suite de Fibonacci.
  */
 public class ControleurFibonacci {
+
+    private static final Logger logger = LogManager.getLogger(ControleurFibonacci.class);
 
     /**
      * Calculateur de la suite de Fibonacci.
@@ -26,6 +30,7 @@ public class ControleurFibonacci {
             BigInteger[] suite = getSuite(methode, nombreDeTermes);
             FormatteurSortie.afficher(suite);
         } catch (IllegalArgumentException e) {
+            logger.error("Erreur: ", e);
             System.err.println("Erreur: " + e.getMessage());
         }
     }

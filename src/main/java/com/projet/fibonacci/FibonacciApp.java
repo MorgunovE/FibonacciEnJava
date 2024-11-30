@@ -3,6 +3,8 @@ package com.projet.fibonacci;
 import com.projet.fibonacci.service.FibonacciService;
 import com.projet.fibonacci.service.InputReader;
 import com.projet.fibonacci.service.ScannerInputReader;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.InputMismatchException;
 
@@ -10,6 +12,8 @@ import java.util.InputMismatchException;
  * Application principale pour exécuter le programme de calcul de la suite de Fibonacci.
  */
 public class FibonacciApp {
+
+    private static final Logger logger = LogManager.getLogger(FibonacciApp.class);
 
     /**
      * InputReader pour lire les entrées de l'utilisateur.
@@ -51,9 +55,14 @@ public class FibonacciApp {
                     service.comparerMethodes(nombreDeTermes);
                 }
             } catch (InputMismatchException | NumberFormatException e) {
+                logger.error("Entrée invalide: ", e);
                 System.err.println("Entrée invalide. Veuillez entrer un nombre entier.");
             } catch (IllegalArgumentException e) {
+                logger.error("Erreur: ", e);
                 System.err.println(e.getMessage());
+            } catch (Exception e) {
+                logger.error("Erreur inattendue: ", e);
+                System.err.println("Erreur inattendue: " + e.getMessage());
             }
         }
     }
