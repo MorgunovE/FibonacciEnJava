@@ -14,7 +14,9 @@ public class FibonacciApp {
         int nombreDeTermes = 0;
 
         try {
-            System.out.println("Entrez le nombre de termes de la suite de Fibonacci à afficher :");
+            System.out.println("#########################################################");
+            System.out.println("############## Programme de calcul de Fibonacci  ###############");
+            System.out.println("Entrez le nombre de termes de la suite de Fibonacci à afficher : ");
             nombreDeTermes = scanner.nextInt();
             if (nombreDeTermes < 0) {
                 throw new IllegalArgumentException("Le nombre de termes doit être un nombre positif.");
