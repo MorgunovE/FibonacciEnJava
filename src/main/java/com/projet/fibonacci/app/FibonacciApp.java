@@ -3,6 +3,7 @@ package com.projet.fibonacci.app;
 import com.projet.fibonacci.service.FibonacciService;
 import com.projet.fibonacci.service.LecteurEntree;
 import com.projet.fibonacci.service.LecteurScanner;
+import com.projet.fibonacci.validation.ValidateurEntree;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -48,15 +49,11 @@ public class FibonacciApp {
                     System.out.println("Programme terminé.");
                     break;
                 }
+                if (!ValidateurEntree.estEntierPositif(input)) {
+                    throw new IllegalArgumentException("Le nombre de termes doit être un entier positif.");
+                }
                 int nombreDeTermes = Integer.parseInt(input);
-                if (nombreDeTermes < 0) {
-                    throw new IllegalArgumentException("Le nombre de termes doit être un nombre positif.");
-                }
-                if (nombreDeTermes == 0) {
-                    System.out.println("La suite de Fibonacci pour 0 termes est vide.");
-                } else {
-                    service.comparerMethodes(nombreDeTermes);
-                }
+                service.comparerMethodes(nombreDeTermes);
             } catch (InputMismatchException | NumberFormatException e) {
                 logger.error("Entrée invalide: ", e);
                 System.err.println("Entrée invalide. Veuillez entrer un nombre entier.");
