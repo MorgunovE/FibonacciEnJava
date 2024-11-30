@@ -1,16 +1,7 @@
 package com.projet.fibonacci.validation;
 
-/**
- * Classe pour valider les entrées utilisateur.
- */
 public class ValidateurEntree {
 
-    /**
-     * Valide si une chaîne de caractères est un entier positif.
-     *
-     * @param input la chaîne de caractères à valider
-     * @return true si la chaîne est un entier positif, false sinon
-     */
     public static boolean estEntierPositif(String input) {
         try {
             int nombre = Integer.parseInt(input);
