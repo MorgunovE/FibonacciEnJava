@@ -42,5 +42,15 @@ bin/
 ### VS Code ###
 .vscode/
 
+### Visual Studio ###
+.vs/
+*.suo
+*.ntvs_analysis.dat
+*.ntvs_test.dat
+ipch/
+*.VC.db
+*.VC.opendb
+
+
 ### Mac OS ###
 .DS_Store
