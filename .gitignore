@@ -7,6 +7,19 @@ idea/
 .idea
 idea
 
+### Maven ###
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+release.properties
+pom.xml.releaseBackup
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+
+
 ### Eclipse ###
 .apt_generated
 .classpath

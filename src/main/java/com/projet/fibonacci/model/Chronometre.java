@@ -1,5 +1,8 @@
 package com.projet.fibonacci.model;
 
+/**
+ * Classe pour mesurer la durée d'exécution en microsecondes.
+ */
 public class Chronometre {
 
     private long debut;

@@ -1,5 +1,8 @@
 package com.projet.fibonacci.view;
 
+/**
+ * Classe pour formater et afficher les résultats de la suite de Fibonacci.
+ */
 public class FormatteurSortie {
 
     public static void afficher(long[] suite) {

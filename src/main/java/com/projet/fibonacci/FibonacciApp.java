@@ -6,6 +6,9 @@ import com.projet.fibonacci.model.Chronometre;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Application principale pour exécuter le programme de calcul de la suite de Fibonacci.
+ */
 public class FibonacciApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

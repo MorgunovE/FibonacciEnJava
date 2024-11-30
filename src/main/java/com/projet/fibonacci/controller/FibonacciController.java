@@ -5,6 +5,9 @@ import com.projet.fibonacci.model.FibonacciIteratif;
 import com.projet.fibonacci.model.FibonacciRecursif;
 import com.projet.fibonacci.view.FormatteurSortie;
 
+/**
+ * Contrôleur pour gérer l'affichage de la suite de Fibonacci.
+ */
 public class FibonacciController {
 
     private FibonacciCalculateur calculateur;

@@ -3,6 +3,9 @@ package com.projet.fibonacci.model;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Classe pour calculer les termes de la suite de Fibonacci de manière récursive.
+ */
 public class FibonacciRecursif implements FibonacciCalculateur {
 
     private static Map<Integer, Long> memo = new HashMap<>();
