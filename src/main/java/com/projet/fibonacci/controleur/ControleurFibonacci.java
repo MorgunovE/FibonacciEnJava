@@ -9,19 +9,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.math.BigInteger;
 
-/**
- * Contrôleur pour gérer les calculs et l'affichage de la suite de Fibonacci.
- */
 public class ControleurFibonacci {
 
-    /**
-     * Logger pour afficher les messages d'erreur.
-     */
     private static final Logger logger = LogManager.getLogger(ControleurFibonacci.class);
-
-    /**
-     * Calculateur de la suite de Fibonacci.
-     */
     private CalculateurFibonacci calculateur;
 
     public void setCalculateur(CalculateurFibonacci calculateur) {

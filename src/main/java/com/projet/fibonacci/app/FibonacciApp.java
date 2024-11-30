@@ -3,11 +3,9 @@ package com.projet.fibonacci.app;
 import com.projet.fibonacci.service.FibonacciService;
 import com.projet.fibonacci.service.LecteurEntree;
 import com.projet.fibonacci.service.LecteurScanner;
-import com.projet.fibonacci.validation.ValidateurEntree;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.InputMismatchException;
 
 public class FibonacciApp {
 

@@ -3,33 +3,23 @@ package com.projet.fibonacci.service;
 import com.projet.fibonacci.controleur.ControleurFibonacci;
 import com.projet.fibonacci.util.Chronometre;
 
-/**
- * Service pour gérer les opérations liées à la suite de Fibonacci.
- */
 public class FibonacciService {
 
-    /**
-     * Contrôleur pour gérer l'affichage de la suite de Fibonacci.
-     */
-    private final ControleurFibonacci controller;
-
-    /**
-     * Chronomètre pour mesurer la durée d'exécution.
-     */
+    private final ControleurFibonacci controleur;
     private final Chronometre chronometre;
 
     public FibonacciService() {
         this(new ControleurFibonacci(), new Chronometre());
     }
 
-    public FibonacciService(ControleurFibonacci controller, Chronometre chronometre) {
-        this.controller = controller;
+    public FibonacciService(ControleurFibonacci controleur, Chronometre chronometre) {
+        this.controleur = controleur;
         this.chronometre = chronometre;
     }
 
     public void afficherSuite(String methode, int nombreDeTermes) {
         chronometre.demarrer();
-        controller.afficherSuite(methode, nombreDeTermes);
+        controleur.afficherSuite(methode, nombreDeTermes);
         chronometre.arreter();
         long duree = chronometre.getDureeMicrosecondes();
         System.out.println("#### Durée de la méthode " + methode + " : " + duree + " microsecondes");
@@ -41,14 +31,14 @@ public class FibonacciService {
 
         System.out.println("###################### Méthode itérative ####################");
         chronometre.demarrer();
-        controller.afficherSuite("itérative", nombreDeTermes);
+        controleur.afficherSuite("itérative", nombreDeTermes);
         chronometre.arreter();
         long dureeIterative = chronometre.getDureeMicrosecondes();
         System.out.println("Durée de la méthode itérative : " + dureeIterative + " microsecondes");
 
         System.out.println("##################### Méthode récursive ####################");
         chronometre.demarrer();
-        controller.afficherSuite("récursive", nombreDeTermes);
+        controleur.afficherSuite("récursive", nombreDeTermes);
         chronometre.arreter();
         long dureeRecursive = chronometre.getDureeMicrosecondes();
         System.out.println("Durée de la méthode récursive : " + dureeRecursive + " microsecondes");
