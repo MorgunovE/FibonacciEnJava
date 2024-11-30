@@ -51,9 +51,13 @@ public class FibonacciApp {
                 System.out.println("La méthode itérative est plus rapide que la méthode récursive de "
                         + (dureeRecursive - dureeIterative) + " microsecondes pour "
                         + nombreDeTermes + " termes.");
-            } else {
+            } else if (dureeIterative > dureeRecursive) {
                 System.out.println("La méthode récursive est plus rapide que la méthode itérative de "
                         + (dureeIterative - dureeRecursive) + " microsecondes pour "
+                        + nombreDeTermes + " termes.");
+            } else {
+                System.out.println("Les deux méthodes ont la même durée de "
+                        + dureeIterative + " microsecondes pour "
                         + nombreDeTermes + " termes.");
             }
         } catch (Exception e) {
