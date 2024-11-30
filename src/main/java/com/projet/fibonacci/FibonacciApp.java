@@ -1,7 +1,6 @@
 package com.projet.fibonacci;
 
-import com.projet.fibonacci.controleur.ControleurFibonacci;
-import com.projet.fibonacci.modele.Chronometre;
+import com.projet.fibonacci.service.FibonacciService;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -30,38 +29,7 @@ public class FibonacciApp {
             scanner.close();
         }
 
-        ControleurFibonacci controller = new ControleurFibonacci();
-        Chronometre chronometre = new Chronometre();
-
-        try {
-            chronometre.demarrer();
-            controller.afficherSuite("itérative", nombreDeTermes);
-            chronometre.arreter();
-            long dureeIterative = chronometre.getDureeMicrosecondes();
-            System.out.println("Durée de la méthode itérative : " + dureeIterative + " microsecondes");
-
-            chronometre.demarrer();
-            controller.afficherSuite("récursive", nombreDeTermes);
-            chronometre.arreter();
-            long dureeRecursive = chronometre.getDureeMicrosecondes();
-            System.out.println("Durée de la méthode récursive : " + dureeRecursive + " microsecondes");
-
-            System.out.println("Comparaison des durées : ");
-            if (dureeIterative < dureeRecursive) {
-                System.out.println("La méthode itérative est plus rapide que la méthode récursive de "
-                        + (dureeRecursive - dureeIterative) + " microsecondes pour "
-                        + nombreDeTermes + " termes.");
-            } else if (dureeIterative > dureeRecursive) {
-                System.out.println("La méthode récursive est plus rapide que la méthode itérative de "
-                        + (dureeIterative - dureeRecursive) + " microsecondes pour "
-                        + nombreDeTermes + " termes.");
-            } else {
-                System.out.println("Les deux méthodes ont la même durée de "
-                        + dureeIterative + " microsecondes pour "
-                        + nombreDeTermes + " termes.");
-            }
-        } catch (Exception e) {
-            System.err.println("Une erreur s'est produite lors de l'exécution : " + e.getMessage());
-        }
+        FibonacciService service = new FibonacciService();
+        service.comparerMethodes(nombreDeTermes);
     }
 }
