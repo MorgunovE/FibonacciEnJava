@@ -1,8 +1,8 @@
 package com.projet.fibonacci.unit;
 
 import com.projet.fibonacci.controleur.ControleurFibonacci;
-import com.projet.fibonacci.util.Chronometre;
 import com.projet.fibonacci.service.FibonacciService;
+import com.projet.fibonacci.util.Chronometre;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

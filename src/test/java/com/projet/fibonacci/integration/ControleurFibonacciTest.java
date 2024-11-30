@@ -3,15 +3,20 @@ package com.projet.fibonacci.integration;
 import com.projet.fibonacci.controleur.ControleurFibonacci;
 import com.projet.fibonacci.modele.FibonacciIteratif;
 import com.projet.fibonacci.modele.FibonacciRecursif;
+import com.projet.fibonacci.service.FibonacciService;
+import com.projet.fibonacci.service.LecteurEntree;
 import org.junit.jupiter.api.Test;
 import java.math.BigInteger;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 public class ControleurFibonacciTest {
 
     @Test
     public void testAfficherSuiteIterative() {
-        ControleurFibonacci controller = new ControleurFibonacci();
+        LecteurEntree mockLecteurEntree = mock(LecteurEntree.class);
+        FibonacciService mockService = mock(FibonacciService.class);
+        ControleurFibonacci controller = new ControleurFibonacci(mockLecteurEntree, mockService);
         controller.setCalculateur(new FibonacciIteratif());
         BigInteger[] expected = {
             BigInteger.ZERO, BigInteger.ONE, BigInteger.ONE, BigInteger.TWO, BigInteger.valueOf(3),
@@ -23,7 +28,9 @@ public class ControleurFibonacciTest {
 
     @Test
     public void testAfficherSuiteRecursive() {
-        ControleurFibonacci controller = new ControleurFibonacci();
+        LecteurEntree mockLecteurEntree = mock(LecteurEntree.class);
+        FibonacciService mockService = mock(FibonacciService.class);
+        ControleurFibonacci controller = new ControleurFibonacci(mockLecteurEntree, mockService);
         controller.setCalculateur(new FibonacciRecursif());
         BigInteger[] expected = {
             BigInteger.ZERO, BigInteger.ONE, BigInteger.ONE, BigInteger.TWO, BigInteger.valueOf(3),

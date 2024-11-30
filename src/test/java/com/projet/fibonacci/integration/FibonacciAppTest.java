@@ -17,6 +17,8 @@ public class FibonacciAppTest {
             .thenReturn("exit");  // Exit command
 
         FibonacciService mockService = mock(FibonacciService.class);
+
+        // Create an instance of FibonacciApp with mocked dependencies
         FibonacciApp app = new FibonacciApp(mockLecteurEntree, mockService);
         app.run();
 
@@ -31,6 +33,8 @@ public class FibonacciAppTest {
             .thenReturn("exit");  // Exit command
 
         FibonacciService mockService = mock(FibonacciService.class);
+
+        // Create an instance of FibonacciApp with mocked dependencies
         FibonacciApp app = new FibonacciApp(mockLecteurEntree, mockService);
         app.run();
 
@@ -45,6 +49,8 @@ public class FibonacciAppTest {
             .thenReturn("exit");  // Exit command
 
         FibonacciService mockService = mock(FibonacciService.class);
+
+        // Create an instance of FibonacciApp with mocked dependencies
         FibonacciApp app = new FibonacciApp(mockLecteurEntree, mockService);
         app.run();
 
@@ -59,6 +65,8 @@ public class FibonacciAppTest {
             .thenReturn("exit");  // Exit command
 
         FibonacciService mockService = mock(FibonacciService.class);
+
+        // Create an instance of FibonacciApp with mocked dependencies
         FibonacciApp app = new FibonacciApp(mockLecteurEntree, mockService);
         app.run();
 

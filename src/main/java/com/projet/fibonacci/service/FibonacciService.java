@@ -8,10 +8,6 @@ public class FibonacciService {
     private final ControleurFibonacci controleur;
     private final Chronometre chronometre;
 
-    public FibonacciService() {
-        this(new ControleurFibonacci(), new Chronometre());
-    }
-
     public FibonacciService(ControleurFibonacci controleur, Chronometre chronometre) {
         this.controleur = controleur;
         this.chronometre = chronometre;
