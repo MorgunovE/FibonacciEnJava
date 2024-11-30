@@ -1,4 +1,4 @@
-package com.projet.fibonacci;
+package com.projet.fibonacci.model;
 
 import java.util.HashMap;
 import java.util.Map;

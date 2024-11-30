@@ -1,4 +1,4 @@
-package com.projet.fibonacci;
+package com.projet.fibonacci.model;
 
 /**
  * La classe Chronometre fournit des méthodes pour mesurer le temps d'exécution.

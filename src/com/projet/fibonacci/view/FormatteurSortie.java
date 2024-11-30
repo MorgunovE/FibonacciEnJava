@@ -1,4 +1,4 @@
-package com.projet.fibonacci;
+package com.projet.fibonacci.view;
 
 /**
  * La classe FormatteurSortie fournit des méthodes pour formater et afficher les nombres de la suite de Fibonacci.

@@ -1,4 +1,4 @@
-package com.projet.fibonacci;
+package com.projet.fibonacci.model;
 
 /**
  * La classe FibonacciIteratif fournit une méthode pour calculer la suite de Fibonacci
