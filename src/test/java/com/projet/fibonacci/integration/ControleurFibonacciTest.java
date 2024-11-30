@@ -4,6 +4,7 @@ import com.projet.fibonacci.controleur.ControleurFibonacci;
 import com.projet.fibonacci.modele.FibonacciIteratif;
 import com.projet.fibonacci.modele.FibonacciRecursif;
 import org.junit.jupiter.api.Test;
+import java.math.BigInteger;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ControleurFibonacciTest {
@@ -12,8 +13,11 @@ public class ControleurFibonacciTest {
     public void testAfficherSuiteIterative() {
         ControleurFibonacci controller = new ControleurFibonacci();
         controller.setCalculateur(new FibonacciIteratif());
-        long[] expected = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34};
-        long[] actual = controller.getSuite("itérative", 10);
+        BigInteger[] expected = {
+            BigInteger.ZERO, BigInteger.ONE, BigInteger.ONE, BigInteger.TWO, BigInteger.valueOf(3),
+            BigInteger.valueOf(5), BigInteger.valueOf(8), BigInteger.valueOf(13), BigInteger.valueOf(21), BigInteger.valueOf(34)
+        };
+        BigInteger[] actual = controller.getSuite("itérative", 10);
         assertArrayEquals(expected, actual);
     }
 
@@ -21,8 +25,11 @@ public class ControleurFibonacciTest {
     public void testAfficherSuiteRecursive() {
         ControleurFibonacci controller = new ControleurFibonacci();
         controller.setCalculateur(new FibonacciRecursif());
-        long[] expected = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34};
-        long[] actual = controller.getSuite("récursive", 10);
+        BigInteger[] expected = {
+            BigInteger.ZERO, BigInteger.ONE, BigInteger.ONE, BigInteger.TWO, BigInteger.valueOf(3),
+            BigInteger.valueOf(5), BigInteger.valueOf(8), BigInteger.valueOf(13), BigInteger.valueOf(21), BigInteger.valueOf(34)
+        };
+        BigInteger[] actual = controller.getSuite("récursive", 10);
         assertArrayEquals(expected, actual);
     }
 }

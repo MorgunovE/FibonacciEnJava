@@ -1,24 +1,23 @@
 package com.projet.fibonacci.modele;
 
-/**
- * Classe pour calculer les termes de la suite de Fibonacci de manière itérative.
- */
+import java.math.BigInteger;
+
 public class FibonacciIteratif implements CalculateurFibonacci {
 
     @Override
-    public long calculer(int terme) {
+    public BigInteger calculer(int terme) {
         if (terme < 0) {
             throw new IllegalArgumentException("Le terme de la suite de Fibonacci ne peut pas être négatif.");
         }
         if (terme == 0) {
-            return 0;
+            return BigInteger.ZERO;
         }
         if (terme == 1) {
-            return 1;
+            return BigInteger.ONE;
         }
-        long a = 0, b = 1;
+        BigInteger a = BigInteger.ZERO, b = BigInteger.ONE;
         for (int i = 2; i <= terme; i++) {
-            long temp = a + b;
+            BigInteger temp = a.add(b);
             a = b;
             b = temp;
         }
@@ -26,15 +25,15 @@ public class FibonacciIteratif implements CalculateurFibonacci {
     }
 
     @Override
-    public long[] calculerSuite(int nombreDeTermes) {
+    public BigInteger[] calculerSuite(int nombreDeTermes) {
         if (nombreDeTermes < 0) {
             throw new IllegalArgumentException("Le nombre de termes de la suite de Fibonacci ne peut pas être négatif.");
         }
-        long[] suite = new long[nombreDeTermes];
-        if (nombreDeTermes > 0) suite[0] = 0;
-        if (nombreDeTermes > 1) suite[1] = 1;
+        BigInteger[] suite = new BigInteger[nombreDeTermes];
+        if (nombreDeTermes > 0) suite[0] = BigInteger.ZERO;
+        if (nombreDeTermes > 1) suite[1] = BigInteger.ONE;
         for (int i = 2; i < nombreDeTermes; i++) {
-            suite[i] = suite[i - 1] + suite[i - 2];
+            suite[i] = suite[i - 1].add(suite[i - 2]);
         }
         return suite;
     }

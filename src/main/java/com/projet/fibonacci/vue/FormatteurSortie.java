@@ -1,11 +1,10 @@
 package com.projet.fibonacci.vue;
 
-/**
- * Classe pour formater et afficher les résultats de la suite de Fibonacci.
- */
+import java.math.BigInteger;
+
 public class FormatteurSortie {
 
-    public static void afficher(long[] suite) {
+    public static void afficher(BigInteger[] suite) {
         for (int i = 0; i < suite.length; i++) {
             if (i > 0) {
                 System.out.print(", ");
@@ -15,7 +14,7 @@ public class FormatteurSortie {
         System.out.println();
     }
 
-    private static String formatterNombre(long nombre) {
-        return String.valueOf(nombre).replaceAll("(\\d)(?=(\\d{3})+$)", "$1 ");
+    private static String formatterNombre(BigInteger nombre) {
+        return nombre.toString().replaceAll("(\\d)(?=(\\d{3})+$)", "$1 ");
     }
 }

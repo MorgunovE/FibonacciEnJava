@@ -5,14 +5,10 @@ import com.projet.fibonacci.modele.FibonacciIteratif;
 import com.projet.fibonacci.modele.FibonacciRecursif;
 import com.projet.fibonacci.vue.FormatteurSortie;
 
-/**
- * Contrôleur pour gérer l'affichage de la suite de Fibonacci.
- */
+import java.math.BigInteger;
+
 public class ControleurFibonacci {
 
-    /**
-     * Calculateur de Fibonacci.
-     */
     private CalculateurFibonacci calculateur;
 
     public void setCalculateur(CalculateurFibonacci calculateur) {
@@ -21,14 +17,14 @@ public class ControleurFibonacci {
 
     public void afficherSuite(String methode, int nombreDeTermes) {
         try {
-            long[] suite = getSuite(methode, nombreDeTermes);
+            BigInteger[] suite = getSuite(methode, nombreDeTermes);
             FormatteurSortie.afficher(suite);
         } catch (IllegalArgumentException e) {
             System.err.println("Erreur: " + e.getMessage());
         }
     }
 
-    public long[] getSuite(String methode, int nombreDeTermes) {
+    public BigInteger[] getSuite(String methode, int nombreDeTermes) {
         if (nombreDeTermes < 0) {
             throw new IllegalArgumentException("Le nombre de termes doit être positif.");
         }
@@ -37,7 +33,7 @@ public class ControleurFibonacci {
             return calculateur.calculerSuite(nombreDeTermes);
         } else {
             setCalculateur(new FibonacciRecursif());
-            long[] suite = new long[nombreDeTermes];
+            BigInteger[] suite = new BigInteger[nombreDeTermes];
             for (int i = 0; i < nombreDeTermes; i++) {
                 suite[i] = calculateur.calculer(i);
             }
