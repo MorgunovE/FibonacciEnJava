@@ -1,4 +1,4 @@
-package com.projet.fibonacci.view;
+package com.projet.fibonacci.vue;
 
 /**
  * Classe pour formater et afficher les résultats de la suite de Fibonacci.

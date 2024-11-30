@@ -1,6 +1,6 @@
-package com.projet.fibonacci.model;
+package com.projet.fibonacci.modele;
 
-public interface FibonacciCalculateur {
+public interface CalculateurFibonacci {
     long calculer(int terme);
     default long[] calculerSuite(int nombreDeTermes) {
         long[] suite = new long[nombreDeTermes];

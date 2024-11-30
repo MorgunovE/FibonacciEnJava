@@ -1,4 +1,4 @@
-package com.projet.fibonacci.model;
+package com.projet.fibonacci.modele;
 
 /**
  * Classe pour mesurer la durée d'exécution en microsecondes.

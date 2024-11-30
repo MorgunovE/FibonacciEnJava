@@ -1,7 +1,7 @@
 package com.projet.fibonacci;
 
-import com.projet.fibonacci.controller.FibonacciController;
-import com.projet.fibonacci.model.Chronometre;
+import com.projet.fibonacci.controleur.ControleurFibonacci;
+import com.projet.fibonacci.modele.Chronometre;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -30,7 +30,7 @@ public class FibonacciApp {
             scanner.close();
         }
 
-        FibonacciController controller = new FibonacciController();
+        ControleurFibonacci controller = new ControleurFibonacci();
         Chronometre chronometre = new Chronometre();
 
         chronometre.demarrer();

@@ -1,4 +1,4 @@
-package com.projet.fibonacci.model;
+package com.projet.fibonacci.modele;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Classe pour calculer les termes de la suite de Fibonacci de manière récursive.
  */
-public class FibonacciRecursif implements FibonacciCalculateur {
+public class FibonacciRecursif implements CalculateurFibonacci {
 
     /**
      * Mémoisation des résultats de la suite de Fibonacci.

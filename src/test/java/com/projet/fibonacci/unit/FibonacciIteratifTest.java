@@ -1,14 +1,14 @@
 package com.projet.fibonacci.unit;
 
-import com.projet.fibonacci.modele.FibonacciRecursif;
+import com.projet.fibonacci.modele.FibonacciIteratif;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FibonacciRecursifTest {
+public class FibonacciIteratifTest {
 
     @Test
     public void testCalculer() {
-        FibonacciRecursif fibonacci = new FibonacciRecursif();
+        FibonacciIteratif fibonacci = new FibonacciIteratif();
         assertEquals(0, fibonacci.calculer(0));
         assertEquals(1, fibonacci.calculer(1));
         assertEquals(1, fibonacci.calculer(2));

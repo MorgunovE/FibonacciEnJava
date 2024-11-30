@@ -1,21 +1,21 @@
-package com.projet.fibonacci.controller;
+package com.projet.fibonacci.controleur;
 
-import com.projet.fibonacci.model.FibonacciCalculateur;
-import com.projet.fibonacci.model.FibonacciIteratif;
-import com.projet.fibonacci.model.FibonacciRecursif;
-import com.projet.fibonacci.view.FormatteurSortie;
+import com.projet.fibonacci.modele.CalculateurFibonacci;
+import com.projet.fibonacci.modele.FibonacciIteratif;
+import com.projet.fibonacci.modele.FibonacciRecursif;
+import com.projet.fibonacci.vue.FormatteurSortie;
 
 /**
  * Contrôleur pour gérer l'affichage de la suite de Fibonacci.
  */
-public class FibonacciController {
+public class ControleurFibonacci {
 
     /**
      * Calculateur de Fibonacci.
      */
-    private FibonacciCalculateur calculateur;
+    private CalculateurFibonacci calculateur;
 
-    public void setCalculateur(FibonacciCalculateur calculateur) {
+    public void setCalculateur(CalculateurFibonacci calculateur) {
         this.calculateur = calculateur;
     }
 

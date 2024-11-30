@@ -1,4 +1,4 @@
 /**
  * Provides the classes necessary to control the Fibonacci application.
  */
-package com.projet.fibonacci.controller;
+package com.projet.fibonacci.controleur;

@@ -1,6 +1,6 @@
 package com.projet.fibonacci.performance;
 
-import com.projet.fibonacci.model.Chronometre;
+import com.projet.fibonacci.modele.Chronometre;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,7 +13,6 @@ public class ChronometreTest {
         Chronometre chronometre = new Chronometre();
         chronometre.demarrer();
 
-        // Perform some operations
         for (int i = 0; i < OPERATION_COUNT; i++) {
             Math.sqrt(i);
         }

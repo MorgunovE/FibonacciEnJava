@@ -1,9 +1,9 @@
-package com.projet.fibonacci.model;
+package com.projet.fibonacci.modele;
 
 /**
  * Classe pour calculer les termes de la suite de Fibonacci de manière itérative.
  */
-public class FibonacciIteratif implements FibonacciCalculateur {
+public class FibonacciIteratif implements CalculateurFibonacci {
 
     @Override
     public long calculer(int terme) {
