@@ -6,16 +6,16 @@ import com.projet.fibonacci.view.FormatteurSortie;
 
 public class FibonacciController {
 
-    public void afficherSuiteFibonacci(String methode, int nombreDeTermes) {
-        long[] fibNombres;
+    public void afficherSuite(String methode, int nombreDeTermes) {
+        long[] suite;
         if ("itérative".equals(methode)) {
-            fibNombres = FibonacciIteratif.calculerSuiteFibonacci(nombreDeTermes);
+            suite = FibonacciIteratif.calculerSuite(nombreDeTermes);
         } else {
-            fibNombres = new long[nombreDeTermes];
+            suite = new long[nombreDeTermes];
             for (int i = 0; i < nombreDeTermes; i++) {
-                fibNombres[i] = FibonacciRecursif.calculerFibonacci(i);
+                suite[i] = FibonacciRecursif.calculer(i);
             }
         }
-        FormatteurSortie.afficher(fibNombres);
+        FormatteurSortie.afficher(suite);
     }
 }

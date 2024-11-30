@@ -31,13 +31,13 @@ public class FibonacciApp {
         Chronometre chronometre = new Chronometre();
 
         chronometre.demarrer();
-        controller.afficherSuiteFibonacci("itérative", nombreDeTermes);
+        controller.afficherSuite("itérative", nombreDeTermes);
         chronometre.arreter();
         long dureeIterative = chronometre.getDureeMicrosecondes();
         System.out.println("Durée de la méthode itérative : " + dureeIterative + " microsecondes");
 
         chronometre.demarrer();
-        controller.afficherSuiteFibonacci("récursive", nombreDeTermes);
+        controller.afficherSuite("récursive", nombreDeTermes);
         chronometre.arreter();
         long dureeRecursive = chronometre.getDureeMicrosecondes();
         System.out.println("Durée de la méthode récursive : " + dureeRecursive + " microsecondes");

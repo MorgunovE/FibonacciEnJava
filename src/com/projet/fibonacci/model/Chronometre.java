@@ -1,22 +1,19 @@
 package com.projet.fibonacci.model;
 
-/**
- * La classe Chronometre fournit des méthodes pour mesurer le temps d'exécution.
- */
 public class Chronometre {
 
-    private long startTime;
-    private long endTime;
+    private long debut;
+    private long fin;
 
     public void demarrer() {
-        startTime = System.nanoTime();
+        debut = System.nanoTime();
     }
 
     public void arreter() {
-        endTime = System.nanoTime();
+        fin = System.nanoTime();
     }
 
     public long getDureeMicrosecondes() {
-        return (endTime - startTime) / 1000;
+        return (fin - debut) / 1000;
     }
 }
