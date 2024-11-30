@@ -20,11 +20,18 @@ public class ControleurFibonacci {
     }
 
     public void afficherSuite(String methode, int nombreDeTermes) {
-        long[] suite = getSuite(methode, nombreDeTermes);
-        FormatteurSortie.afficher(suite);
+        try {
+            long[] suite = getSuite(methode, nombreDeTermes);
+            FormatteurSortie.afficher(suite);
+        } catch (IllegalArgumentException e) {
+            System.err.println("Erreur: " + e.getMessage());
+        }
     }
 
     public long[] getSuite(String methode, int nombreDeTermes) {
+        if (nombreDeTermes < 0) {
+            throw new IllegalArgumentException("Le nombre de termes doit être positif.");
+        }
         if ("itérative".equals(methode)) {
             setCalculateur(new FibonacciIteratif());
             return calculateur.calculerSuite(nombreDeTermes);
