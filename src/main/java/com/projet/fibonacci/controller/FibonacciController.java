@@ -20,17 +20,21 @@ public class FibonacciController {
     }
 
     public void afficherSuite(String methode, int nombreDeTermes) {
-        long[] suite;
+        long[] suite = getSuite(methode, nombreDeTermes);
+        FormatteurSortie.afficher(suite);
+    }
+
+    public long[] getSuite(String methode, int nombreDeTermes) {
         if ("itérative".equals(methode)) {
             setCalculateur(new FibonacciIteratif());
-            suite = calculateur.calculerSuite(nombreDeTermes);
+            return calculateur.calculerSuite(nombreDeTermes);
         } else {
             setCalculateur(new FibonacciRecursif());
-            suite = new long[nombreDeTermes];
+            long[] suite = new long[nombreDeTermes];
             for (int i = 0; i < nombreDeTermes; i++) {
                 suite[i] = calculateur.calculer(i);
             }
+            return suite;
         }
-        FormatteurSortie.afficher(suite);
     }
 }
