@@ -45,7 +45,11 @@ public class FibonacciApp {
                 if (nombreDeTermes < 0) {
                     throw new IllegalArgumentException("Le nombre de termes doit être un nombre positif.");
                 }
-                service.comparerMethodes(nombreDeTermes);
+                if (nombreDeTermes == 0) {
+                    System.out.println("La suite de Fibonacci pour 0 termes est vide.");
+                } else {
+                    service.comparerMethodes(nombreDeTermes);
+                }
             } catch (InputMismatchException | NumberFormatException e) {
                 System.err.println("Entrée invalide. Veuillez entrer un nombre entier.");
             } catch (IllegalArgumentException e) {

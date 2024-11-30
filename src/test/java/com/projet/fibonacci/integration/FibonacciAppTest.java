@@ -50,4 +50,18 @@ public class FibonacciAppTest {
 
         verify(mockService, never()).comparerMethodes(anyInt());
     }
+
+    @Test
+    public void testZeroInputThenExit() {
+        InputReader mockInputReader = mock(InputReader.class);
+        when(mockInputReader.nextLine())
+            .thenReturn("0")  // Zero input
+            .thenReturn("exit");  // Exit command
+
+        FibonacciService mockService = mock(FibonacciService.class);
+        FibonacciApp app = new FibonacciApp(mockInputReader, mockService);
+        app.run();
+
+        verify(mockService, never()).comparerMethodes(anyInt());
+    }
 }
