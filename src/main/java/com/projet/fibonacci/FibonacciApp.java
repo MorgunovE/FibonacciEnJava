@@ -31,25 +31,27 @@ public class FibonacciApp {
     }
 
     public void run() {
-        int nombreDeTermes = 0;
-
-        try {
-            System.out.println("#########################################################");
-            System.out.println("############## Programme de calcul de Fibonacci  ###############");
-            System.out.println("Entrez le nombre de termes de la suite de Fibonacci à afficher : ");
-            nombreDeTermes = inputReader.nextInt();
-            if (nombreDeTermes < 0) {
-                throw new IllegalArgumentException("Le nombre de termes doit être un nombre positif.");
+        while (true) {
+            try {
+                System.out.println("#########################################################");
+                System.out.println("############## Programme de calcul de Fibonacci  ###############");
+                System.out.println("Entrez le nombre de termes de la suite de Fibonacci à afficher \n(ou tapez 'exit' pour quitter) : ");
+                String input = inputReader.nextLine();
+                if ("exit".equalsIgnoreCase(input)) {
+                    System.out.println("Programme terminé.");
+                    break;
+                }
+                int nombreDeTermes = Integer.parseInt(input);
+                if (nombreDeTermes < 0) {
+                    throw new IllegalArgumentException("Le nombre de termes doit être un nombre positif.");
+                }
+                service.comparerMethodes(nombreDeTermes);
+            } catch (InputMismatchException | NumberFormatException e) {
+                System.err.println("Entrée invalide. Veuillez entrer un nombre entier.");
+            } catch (IllegalArgumentException e) {
+                System.err.println(e.getMessage());
             }
-        } catch (InputMismatchException e) {
-            System.err.println("Entrée invalide. Veuillez entrer un nombre entier.");
-            return;
-        } catch (IllegalArgumentException e) {
-            System.err.println(e.getMessage());
-            return;
         }
-
-        service.comparerMethodes(nombreDeTermes);
     }
 
     public static void main(String[] args) {

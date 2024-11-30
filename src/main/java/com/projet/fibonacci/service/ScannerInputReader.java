@@ -25,4 +25,9 @@ public class ScannerInputReader implements InputReader {
     public int nextInt() {
         return scanner.nextInt();
     }
+
+    @Override
+    public String nextLine() {
+        return scanner.nextLine();
+    }
 }
