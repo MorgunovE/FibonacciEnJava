@@ -1,6 +1,6 @@
 package com.projet.fibonacci.service;
 
-public interface InputReader {
+public interface LecteurEntree {
     int nextInt();
     String nextLine();
 }

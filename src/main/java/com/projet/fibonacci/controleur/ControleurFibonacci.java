@@ -14,6 +14,9 @@ import java.math.BigInteger;
  */
 public class ControleurFibonacci {
 
+    /**
+     * Logger pour afficher les messages d'erreur.
+     */
     private static final Logger logger = LogManager.getLogger(ControleurFibonacci.class);
 
     /**

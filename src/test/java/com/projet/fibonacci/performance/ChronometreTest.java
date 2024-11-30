@@ -1,6 +1,6 @@
 package com.projet.fibonacci.performance;
 
-import com.projet.fibonacci.modele.Chronometre;
+import com.projet.fibonacci.util.Chronometre;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -3,9 +3,9 @@ package com.projet.fibonacci.service;
 import java.util.Scanner;
 
 /**
- * Implementation of InputReader that uses a Scanner to read input.
+ * Implementation of LecteurEntree that uses a Scanner to read input.
  */
-public class ScannerInputReader implements InputReader {
+public class LecteurScanner implements LecteurEntree {
 
     /**
      * Scanner to read input from the user.
@@ -13,11 +13,11 @@ public class ScannerInputReader implements InputReader {
     private final Scanner scanner;
 
     /**
-     * Constructs a ScannerInputReader with the specified Scanner.
+     * Constructs a LecteurScanner with the specified Scanner.
      *
      * @param scanner the Scanner to use for reading input
      */
-    public ScannerInputReader(Scanner scanner) {
+    public LecteurScanner(Scanner scanner) {
         this.scanner = scanner;
     }
 

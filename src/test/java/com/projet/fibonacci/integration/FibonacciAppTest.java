@@ -1,7 +1,7 @@
 package com.projet.fibonacci.integration;
 
-import com.projet.fibonacci.FibonacciApp;
-import com.projet.fibonacci.service.InputReader;
+import com.projet.fibonacci.app.FibonacciApp;
+import com.projet.fibonacci.service.LecteurEntree;
 import com.projet.fibonacci.service.FibonacciService;
 import org.junit.jupiter.api.Test;
 
@@ -11,13 +11,13 @@ public class FibonacciAppTest {
 
     @Test
     public void testMain() {
-        InputReader mockInputReader = mock(InputReader.class);
-        when(mockInputReader.nextLine())
+        LecteurEntree mockLecteurEntree = mock(LecteurEntree.class);
+        when(mockLecteurEntree.nextLine())
             .thenReturn("10")  // Valid input
             .thenReturn("exit");  // Exit command
 
         FibonacciService mockService = mock(FibonacciService.class);
-        FibonacciApp app = new FibonacciApp(mockInputReader, mockService);
+        FibonacciApp app = new FibonacciApp(mockLecteurEntree, mockService);
         app.run();
 
         verify(mockService, times(1)).comparerMethodes(10);
@@ -25,13 +25,13 @@ public class FibonacciAppTest {
 
     @Test
     public void testInvalidInputThenExit() {
-        InputReader mockInputReader = mock(InputReader.class);
-        when(mockInputReader.nextLine())
+        LecteurEntree mockLecteurEntree = mock(LecteurEntree.class);
+        when(mockLecteurEntree.nextLine())
             .thenReturn("invalid")  // Invalid input
             .thenReturn("exit");  // Exit command
 
         FibonacciService mockService = mock(FibonacciService.class);
-        FibonacciApp app = new FibonacciApp(mockInputReader, mockService);
+        FibonacciApp app = new FibonacciApp(mockLecteurEntree, mockService);
         app.run();
 
         verify(mockService, never()).comparerMethodes(anyInt());
@@ -39,13 +39,13 @@ public class FibonacciAppTest {
 
     @Test
     public void testNegativeInputThenExit() {
-        InputReader mockInputReader = mock(InputReader.class);
-        when(mockInputReader.nextLine())
+        LecteurEntree mockLecteurEntree = mock(LecteurEntree.class);
+        when(mockLecteurEntree.nextLine())
             .thenReturn("-5")  // Negative input
             .thenReturn("exit");  // Exit command
 
         FibonacciService mockService = mock(FibonacciService.class);
-        FibonacciApp app = new FibonacciApp(mockInputReader, mockService);
+        FibonacciApp app = new FibonacciApp(mockLecteurEntree, mockService);
         app.run();
 
         verify(mockService, never()).comparerMethodes(anyInt());
@@ -53,13 +53,13 @@ public class FibonacciAppTest {
 
     @Test
     public void testZeroInputThenExit() {
-        InputReader mockInputReader = mock(InputReader.class);
-        when(mockInputReader.nextLine())
+        LecteurEntree mockLecteurEntree = mock(LecteurEntree.class);
+        when(mockLecteurEntree.nextLine())
             .thenReturn("0")  // Zero input
             .thenReturn("exit");  // Exit command
 
         FibonacciService mockService = mock(FibonacciService.class);
-        FibonacciApp app = new FibonacciApp(mockInputReader, mockService);
+        FibonacciApp app = new FibonacciApp(mockLecteurEntree, mockService);
         app.run();
 
         verify(mockService, never()).comparerMethodes(anyInt());

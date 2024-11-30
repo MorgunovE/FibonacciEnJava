@@ -1,11 +1,10 @@
 package com.projet.fibonacci.unit;
 
 import com.projet.fibonacci.controleur.ControleurFibonacci;
-import com.projet.fibonacci.modele.Chronometre;
+import com.projet.fibonacci.util.Chronometre;
 import com.projet.fibonacci.service.FibonacciService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import static org.mockito.Mockito.*;
 

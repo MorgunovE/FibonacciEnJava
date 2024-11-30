@@ -1,8 +1,8 @@
-package com.projet.fibonacci;
+package com.projet.fibonacci.app;
 
 import com.projet.fibonacci.service.FibonacciService;
-import com.projet.fibonacci.service.InputReader;
-import com.projet.fibonacci.service.ScannerInputReader;
+import com.projet.fibonacci.service.LecteurEntree;
+import com.projet.fibonacci.service.LecteurScanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,12 +13,15 @@ import java.util.InputMismatchException;
  */
 public class FibonacciApp {
 
+    /**
+     * Logger pour enregistrer les messages.
+     */
     private static final Logger logger = LogManager.getLogger(FibonacciApp.class);
 
     /**
-     * InputReader pour lire les entrées de l'utilisateur.
+     * LecteurEntree pour lire les entrées de l'utilisateur.
      */
-    private final InputReader inputReader;
+    private final LecteurEntree lecteurEntree;
 
     /**
      * Service pour gérer les opérations liées à la suite de Fibonacci.
@@ -26,11 +29,11 @@ public class FibonacciApp {
     private final FibonacciService service;
 
     public FibonacciApp() {
-        this(new ScannerInputReader(new java.util.Scanner(System.in)), new FibonacciService());
+        this(new LecteurScanner(new java.util.Scanner(System.in)), new FibonacciService());
     }
 
-    public FibonacciApp(InputReader inputReader, FibonacciService service) {
-        this.inputReader = inputReader;
+    public FibonacciApp(LecteurEntree lecteurEntree, FibonacciService service) {
+        this.lecteurEntree = lecteurEntree;
         this.service = service;
     }
 
@@ -40,7 +43,7 @@ public class FibonacciApp {
                 System.out.println("#########################################################");
                 System.out.println("############## Programme de calcul de Fibonacci  ###############");
                 System.out.println("Entrez le nombre de termes de la suite de Fibonacci à afficher \n(ou tapez 'exit' pour quitter) : ");
-                String input = inputReader.nextLine();
+                String input = lecteurEntree.nextLine();
                 if ("exit".equalsIgnoreCase(input)) {
                     System.out.println("Programme terminé.");
                     break;

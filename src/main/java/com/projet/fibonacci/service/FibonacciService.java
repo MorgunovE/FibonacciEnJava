@@ -1,7 +1,7 @@
 package com.projet.fibonacci.service;
 
 import com.projet.fibonacci.controleur.ControleurFibonacci;
-import com.projet.fibonacci.modele.Chronometre;
+import com.projet.fibonacci.util.Chronometre;
 
 /**
  * Service pour gérer les opérations liées à la suite de Fibonacci.
