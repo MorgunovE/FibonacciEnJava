@@ -5,7 +5,14 @@ package com.projet.fibonacci.model;
  */
 public class Chronometre {
 
+    /**
+     * Temps de début en nanosecondes.
+     */
     private long debut;
+
+    /**
+     * Temps de fin en nanosecondes.
+     */
     private long fin;
 
     public void demarrer() {

@@ -4,24 +4,14 @@
         <module name="JavadocMethod"/>
         <module name="JavadocType"/>
         <module name="JavadocVariable"/>
-        <module name="JavadocPackage"/>
         <module name="JavadocStyle"/>
         <module name="JavadocTagContinuationIndentation"/>
         <module name="JavadocParagraph"/>
         <module name="JavadocContentLocation"/>
         <module name="JavadocBlockTagLocation"/>
-        <module name="JavadocMethodTagLocation"/>
-        <module name="JavadocTypeTagLocation"/>
-        <module name="JavadocVariableTagLocation"/>
-        <module name="JavadocPackageTagLocation"/>
-        <module name="JavadocStyle"/>
-        <module name="JavadocTagContinuationIndentation"/>
-        <module name="JavadocParagraph"/>
-        <module name="JavadocContentLocation"/>
-        <module name="JavadocBlockTagLocation"/>
-        <module name="JavadocMethodTagLocation"/>
-        <module name="JavadocTypeTagLocation"/>
-        <module name="JavadocVariableTagLocation"/>
-        <module name="JavadocPackageTagLocation"/>
+        <module name="JavadocMethod"/>
+        <module name="JavadocType"/>
+        <module name="JavadocVariable"/>
     </module>
+    <module name="JavadocPackage"/>
 </module>

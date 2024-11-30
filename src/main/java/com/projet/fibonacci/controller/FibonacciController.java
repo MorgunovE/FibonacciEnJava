@@ -10,6 +10,9 @@ import com.projet.fibonacci.view.FormatteurSortie;
  */
 public class FibonacciController {
 
+    /**
+     * Calculateur de Fibonacci.
+     */
     private FibonacciCalculateur calculateur;
 
     public void setCalculateur(FibonacciCalculateur calculateur) {

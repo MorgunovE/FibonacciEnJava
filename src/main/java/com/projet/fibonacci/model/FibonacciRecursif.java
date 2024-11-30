@@ -8,6 +8,9 @@ import java.util.Map;
  */
 public class FibonacciRecursif implements FibonacciCalculateur {
 
+    /**
+     * Mémoisation des résultats de la suite de Fibonacci.
+     */
     private static Map<Integer, Long> memo = new HashMap<>();
 
     @Override
