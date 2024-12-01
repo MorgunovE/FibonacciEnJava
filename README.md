@@ -59,21 +59,30 @@ Ce projet démontre deux méthodes pour calculer la suite de Fibonacci en Java :
 ## Exemple de sortie
 
 ```
-Entrez le nombre de termes de la suite de Fibonacci à afficher :
+#########################################################
+############## Programme de calcul de Fibonacci  ###############
+Entrez le nombre de termes de la suite de Fibonacci à afficher 
+(ou tapez 'exit' pour quitter) : 
 10
-----------------------------------------
-Suite de Fibonacci avec la méthode itérative :
+#########################################################
+####### La calculation de la suite de Fibonacci pour 10 termes ########
+###################### Méthode itérative ####################
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
-Durée de la méthode itérative : 10 microsecondes
-----------------------------------------
-----------------------------------------
-Suite de Fibonacci avec la méthode récursive :
+Durée de la méthode itérative : 2503 microsecondes
+##################### Méthode récursive ####################
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
-Durée de la méthode récursive : 500 microsecondes
-----------------------------------------
-----------------------------------------
-La méthode itérative pour calculer 10 termes de la suite de Fibonacci est plus rapide que la méthode récursive.
-----------------------------------------
+Durée de la méthode récursive : 1628 microsecondes
+########################################################
+################# Comparaison des méthodes  ################
+La méthode récursive est plus rapide que la méthode itérative 
+de 875 microsecondes pour 10 termes.
+########################################################
+#########################################################
+############## Programme de calcul de Fibonacci  ###############
+Entrez le nombre de termes de la suite de Fibonacci à afficher 
+(ou tapez 'exit' pour quitter) : 
+exit
+Programme terminé.
 ```
 
 ## Licence
