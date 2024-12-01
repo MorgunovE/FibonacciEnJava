@@ -10,8 +10,21 @@ import java.math.BigInteger;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+/**
+ * Classe de test pour ControleurFibonacci.
+ * <p>
+ * Cette classe teste les fonctionnalités de ControleurFibonacci en utilisant des mocks pour les dépendances.
+ * </p>
+ *
+ * @version 2.0
+ * @since 2024-11-30
+ * @author Evgenii Morgunov
+ */
 public class ControleurFibonacciTest {
 
+    /**
+     * Teste la méthode afficherSuite pour l'implémentation itérative.
+     */
     @Test
     public void testAfficherSuiteIterative() {
         LecteurEntree mockLecteurEntree = mock(LecteurEntree.class);
@@ -26,6 +39,9 @@ public class ControleurFibonacciTest {
         assertArrayEquals(expected, actual);
     }
 
+    /**
+     * Teste la méthode afficherSuite pour l'implémentation récursive.
+     */
     @Test
     public void testAfficherSuiteRecursive() {
         LecteurEntree mockLecteurEntree = mock(LecteurEntree.class);

@@ -5,20 +5,33 @@ import org.junit.jupiter.api.Test;
 import java.math.BigInteger;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classe de test pour FibonacciRecursif.
+ * <p>
+ * Cette classe teste les fonctionnalités de FibonacciRecursif.
+ * </p>
+ *
+ * @version 2.0
+ * @since 2024-11-30
+ * @author Evgenii Morgunov
+ */
 public class FibonacciRecursifTest {
 
+    /**
+     * Teste la méthode calculer de FibonacciRecursif.
+     */
     @Test
     public void testCalculer() {
         FibonacciRecursif fibonacci = new FibonacciRecursif();
-        assertEquals(BigInteger.ZERO, fibonacci.calculer(0));
-        assertEquals(BigInteger.ONE, fibonacci.calculer(1));
-        assertEquals(BigInteger.ONE, fibonacci.calculer(2));
-        assertEquals(BigInteger.TWO, fibonacci.calculer(3));
-        assertEquals(BigInteger.valueOf(3), fibonacci.calculer(4));
-        assertEquals(BigInteger.valueOf(5), fibonacci.calculer(5));
-        assertEquals(BigInteger.valueOf(8), fibonacci.calculer(6));
-        assertEquals(BigInteger.valueOf(13), fibonacci.calculer(7));
-        assertEquals(BigInteger.valueOf(21), fibonacci.calculer(8));
-        assertEquals(BigInteger.valueOf(34), fibonacci.calculer(9));
+        assertEquals(BigInteger.ZERO, fibonacci.calculer(BigInteger.ZERO));
+        assertEquals(BigInteger.ONE, fibonacci.calculer(BigInteger.ONE));
+        assertEquals(BigInteger.ONE, fibonacci.calculer(BigInteger.valueOf(2)));
+        assertEquals(BigInteger.TWO, fibonacci.calculer(BigInteger.valueOf(3)));
+        assertEquals(BigInteger.valueOf(3), fibonacci.calculer(BigInteger.valueOf(4)));
+        assertEquals(BigInteger.valueOf(5), fibonacci.calculer(BigInteger.valueOf(5)));
+        assertEquals(BigInteger.valueOf(8), fibonacci.calculer(BigInteger.valueOf(6)));
+        assertEquals(BigInteger.valueOf(13), fibonacci.calculer(BigInteger.valueOf(7)));
+        assertEquals(BigInteger.valueOf(21), fibonacci.calculer(BigInteger.valueOf(8)));
+        assertEquals(BigInteger.valueOf(34), fibonacci.calculer(BigInteger.valueOf(9)));
     }
 }

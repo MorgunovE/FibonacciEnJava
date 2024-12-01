@@ -12,6 +12,17 @@ import org.apache.logging.log4j.Logger;
 
 import java.math.BigInteger;
 
+/**
+ * Contrôleur pour la gestion des calculs de la suite de Fibonacci.
+ * <p>
+ * Cette classe gère l'interaction avec l'utilisateur, la validation des entrées,
+ * et la délégation des calculs au service approprié.
+ * </p>
+ *
+ * @author Evgenii Morgunov
+ * @version 2.0
+ * @since 2024-11-30
+ */
 public class ControleurFibonacci {
 
     private static final Logger logger = LogManager.getLogger(ControleurFibonacci.class);
@@ -19,11 +30,20 @@ public class ControleurFibonacci {
     private final FibonacciService fibonacciService;
     private CalculateurFibonacci calculateur;
 
+    /**
+     * Constructeur de la classe ControleurFibonacci.
+     *
+     * @param lecteurEntree Le lecteur d'entrée pour lire les données de l'utilisateur.
+     * @param fibonacciService Le service de calcul de Fibonacci.
+     */
     public ControleurFibonacci(LecteurEntree lecteurEntree, FibonacciService fibonacciService) {
         this.lecteurEntree = lecteurEntree;
         this.fibonacciService = fibonacciService;
     }
 
+    /**
+     * Démarre le contrôleur et gère l'interaction avec l'utilisateur.
+     */
     public void demarrer() {
         while (true) {
             try {
@@ -45,12 +65,21 @@ public class ControleurFibonacci {
         }
     }
 
+    /**
+     * Affiche le menu pour l'utilisateur.
+     */
     private void afficherMenu() {
         System.out.println("#########################################################");
         System.out.println("############## Programme de calcul de Fibonacci  ###############");
         System.out.println("Entrez le nombre de termes de la suite de Fibonacci à afficher \n(ou tapez 'exit' pour quitter) : ");
     }
 
+    /**
+     * Affiche la suite de Fibonacci en utilisant la méthode spécifiée.
+     *
+     * @param methode La méthode de calcul ("itérative" ou "récursive").
+     * @param nombreDeTermes Le nombre de termes de la suite de Fibonacci à afficher.
+     */
     public void afficherSuite(String methode, BigInteger nombreDeTermes) {
         if ("itérative".equalsIgnoreCase(methode)) {
             setCalculateur(new FibonacciIteratif());
@@ -59,10 +88,17 @@ public class ControleurFibonacci {
         } else {
             throw new IllegalArgumentException("Méthode inconnue: " + methode);
         }
-        BigInteger[] suite = calculateur.calculerSuite(nombreDeTermes.intValue());
+        BigInteger[] suite = calculateur.calculerSuite(nombreDeTermes);
         FormatteurSortie.afficher(suite);
     }
 
+    /**
+     * Retourne la suite de Fibonacci en utilisant la méthode spécifiée.
+     *
+     * @param methode La méthode de calcul ("itérative" ou "récursive").
+     * @param nombreDeTermes Le nombre de termes de la suite de Fibonacci à retourner.
+     * @return Un tableau de BigInteger représentant la suite de Fibonacci.
+     */
     public BigInteger[] getSuite(String methode, BigInteger nombreDeTermes) {
         if ("itérative".equalsIgnoreCase(methode)) {
             setCalculateur(new FibonacciIteratif());
@@ -71,9 +107,14 @@ public class ControleurFibonacci {
         } else {
             throw new IllegalArgumentException("Méthode inconnue: " + methode);
         }
-        return calculateur.calculerSuite(nombreDeTermes.intValue());
+        return calculateur.calculerSuite(nombreDeTermes);
     }
 
+    /**
+     * Définit le calculateur de Fibonacci à utiliser.
+     *
+     * @param calculateur Le calculateur de Fibonacci.
+     */
     public void setCalculateur(CalculateurFibonacci calculateur) {
         this.calculateur = calculateur;
     }
