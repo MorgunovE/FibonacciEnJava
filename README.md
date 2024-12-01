@@ -43,7 +43,7 @@ Ce projet démontre deux méthodes pour calculer la suite de Fibonacci en Java :
 
 3. **Exécuter le projet** :
     ```sh
-    mvn exec:java -Dexec.mainClass="com.projet.fibonacci.app.FibonacciApp"
+    mvn "-Dexec.mainClass=com.projet.fibonacci.app.FibonacciApp" exec:java
     ```
 
 4. **Tester le projet** :
