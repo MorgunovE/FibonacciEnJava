@@ -1,4 +1,4 @@
 /**
- * Package contenant les classes du projet Fibonacci.
+ * Package principal de l'application.
  */
 package com.projet.fibonacci;

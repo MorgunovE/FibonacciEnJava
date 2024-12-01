@@ -1,4 +1,4 @@
 /**
- * This package contains the integration tests of the Fibonacci project.
+ * Package contenant les classes de tests d'intégration.
  */
 package com.projet.fibonacci.integration;

@@ -1,4 +1,4 @@
 /**
- * Contains the model classes for calculating Fibonacci sequences.
+ * Package contenant les classes du modèle.
  */
 package com.projet.fibonacci.modele;
