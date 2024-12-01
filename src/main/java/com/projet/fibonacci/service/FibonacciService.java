@@ -3,6 +3,8 @@ package com.projet.fibonacci.service;
 import com.projet.fibonacci.controleur.ControleurFibonacci;
 import com.projet.fibonacci.util.Chronometre;
 
+import java.math.BigInteger;
+
 public class FibonacciService {
 
     private final ControleurFibonacci controleur;
@@ -13,7 +15,7 @@ public class FibonacciService {
         this.chronometre = chronometre;
     }
 
-    public void afficherSuite(String methode, int nombreDeTermes) {
+    public void afficherSuite(String methode, BigInteger nombreDeTermes) {
         chronometre.demarrer();
         controleur.afficherSuite(methode, nombreDeTermes);
         chronometre.arreter();
@@ -21,7 +23,7 @@ public class FibonacciService {
         System.out.println("#### Durée de la méthode " + methode + " : " + duree + " microsecondes");
     }
 
-    public void comparerMethodes(int nombreDeTermes) {
+    public void comparerMethodes(BigInteger nombreDeTermes) {
         System.out.println("#########################################################");
         System.out.println("####### La calculation de la suite de Fibonacci pour " + nombreDeTermes + " termes ########");
 

@@ -6,6 +6,8 @@ import com.projet.fibonacci.validation.ValidateurEntree;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.math.BigInteger;
+
 public class FibonacciInputHandler {
 
     private static final Logger logger = LogManager.getLogger(FibonacciInputHandler.class);
@@ -29,7 +31,7 @@ public class FibonacciInputHandler {
                 if (!ValidateurEntree.estEntierPositif(input)) {
                     throw new IllegalArgumentException("Le nombre de termes doit être un entier positif.");
                 }
-                int nombreDeTermes = Integer.parseInt(input);
+                BigInteger nombreDeTermes = new BigInteger(input);
                 fibonacciService.comparerMethodes(nombreDeTermes);
             } catch (Exception e) {
                 logger.error("Erreur: ", e);

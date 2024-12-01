@@ -1,18 +1,20 @@
 package com.projet.fibonacci.validation;
 
+import java.math.BigInteger;
+
 public class ValidateurEntree {
 
     public static boolean estEntierPositif(String input) {
         try {
-            int nombre = Integer.parseInt(input);
-            if (nombre < 0) {
+            BigInteger nombre = new BigInteger(input);
+            if (nombre.compareTo(BigInteger.ZERO) < 0) {
                 throw new IllegalArgumentException("Le nombre de termes doit être un nombre positif.");
             }
-            if (nombre == 0) {
+            if (nombre.equals(BigInteger.ZERO)) {
                 System.out.println("La suite de Fibonacci pour 0 termes est vide.");
                 return false;
             }
-            return nombre > 0;
+            return nombre.compareTo(BigInteger.ZERO) > 0;
         } catch (NumberFormatException e) {
             return false;
         }

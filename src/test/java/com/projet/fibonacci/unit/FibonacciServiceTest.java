@@ -6,6 +6,8 @@ import com.projet.fibonacci.util.Chronometre;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigInteger;
+
 import static org.mockito.Mockito.*;
 
 public class FibonacciServiceTest {
@@ -23,21 +25,21 @@ public class FibonacciServiceTest {
 
     @Test
     public void testAfficherSuiteIterative() {
-        service.afficherSuite("itérative", 10);
-        verify(mockController, times(1)).afficherSuite("itérative", 10);
+        service.afficherSuite("itérative", BigInteger.TEN);
+        verify(mockController, times(1)).afficherSuite("itérative", BigInteger.TEN);
     }
 
     @Test
     public void testAfficherSuiteRecursive() {
-        service.afficherSuite("récursive", 10);
-        verify(mockController, times(1)).afficherSuite("récursive", 10);
+        service.afficherSuite("récursive", BigInteger.TEN);
+        verify(mockController, times(1)).afficherSuite("récursive", BigInteger.TEN);
     }
 
     @Test
     public void testComparerMethodes() {
         when(mockChronometre.getDureeMicrosecondes()).thenReturn(100L, 200L);
-        service.comparerMethodes(10);
-        verify(mockController, times(1)).afficherSuite("itérative", 10);
-        verify(mockController, times(1)).afficherSuite("récursive", 10);
+        service.comparerMethodes(BigInteger.TEN);
+        verify(mockController, times(1)).afficherSuite("itérative", BigInteger.TEN);
+        verify(mockController, times(1)).afficherSuite("récursive", BigInteger.TEN);
     }
 }

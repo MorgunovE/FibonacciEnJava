@@ -5,6 +5,8 @@ import com.projet.fibonacci.service.LecteurEntree;
 import com.projet.fibonacci.service.FibonacciService;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigInteger;
+
 import static org.mockito.Mockito.*;
 
 public class FibonacciAppTest {
@@ -22,7 +24,7 @@ public class FibonacciAppTest {
         FibonacciApp app = new FibonacciApp(mockLecteurEntree, mockService);
         app.run();
 
-        verify(mockService, times(1)).comparerMethodes(10);
+        verify(mockService, times(1)).comparerMethodes(BigInteger.TEN);
     }
 
     @Test
@@ -38,7 +40,7 @@ public class FibonacciAppTest {
         FibonacciApp app = new FibonacciApp(mockLecteurEntree, mockService);
         app.run();
 
-        verify(mockService, never()).comparerMethodes(anyInt());
+        verify(mockService, never()).comparerMethodes(any(BigInteger.class));
     }
 
     @Test
@@ -54,7 +56,7 @@ public class FibonacciAppTest {
         FibonacciApp app = new FibonacciApp(mockLecteurEntree, mockService);
         app.run();
 
-        verify(mockService, never()).comparerMethodes(anyInt());
+        verify(mockService, never()).comparerMethodes(any(BigInteger.class));
     }
 
     @Test
@@ -70,6 +72,6 @@ public class FibonacciAppTest {
         FibonacciApp app = new FibonacciApp(mockLecteurEntree, mockService);
         app.run();
 
-        verify(mockService, never()).comparerMethodes(anyInt());
+        verify(mockService, never()).comparerMethodes(any(BigInteger.class));
     }
 }

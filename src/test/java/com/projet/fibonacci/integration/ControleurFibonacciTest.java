@@ -22,7 +22,7 @@ public class ControleurFibonacciTest {
             BigInteger.ZERO, BigInteger.ONE, BigInteger.ONE, BigInteger.TWO, BigInteger.valueOf(3),
             BigInteger.valueOf(5), BigInteger.valueOf(8), BigInteger.valueOf(13), BigInteger.valueOf(21), BigInteger.valueOf(34)
         };
-        BigInteger[] actual = controller.getSuite("itérative", 10);
+        BigInteger[] actual = controller.getSuite("itérative", BigInteger.TEN);
         assertArrayEquals(expected, actual);
     }
 
@@ -36,7 +36,7 @@ public class ControleurFibonacciTest {
             BigInteger.ZERO, BigInteger.ONE, BigInteger.ONE, BigInteger.TWO, BigInteger.valueOf(3),
             BigInteger.valueOf(5), BigInteger.valueOf(8), BigInteger.valueOf(13), BigInteger.valueOf(21), BigInteger.valueOf(34)
         };
-        BigInteger[] actual = controller.getSuite("récursive", 10);
+        BigInteger[] actual = controller.getSuite("récursive", BigInteger.TEN);
         assertArrayEquals(expected, actual);
     }
 }

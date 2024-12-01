@@ -36,7 +36,7 @@ public class ControleurFibonacci {
                 if (!ValidateurEntree.estEntierPositif(input)) {
                     throw new IllegalArgumentException("Le nombre de termes doit être un entier positif.");
                 }
-                int nombreDeTermes = Integer.parseInt(input);
+                BigInteger nombreDeTermes = new BigInteger(input);
                 fibonacciService.comparerMethodes(nombreDeTermes);
             } catch (Exception e) {
                 logger.error("Erreur: ", e);
@@ -51,7 +51,7 @@ public class ControleurFibonacci {
         System.out.println("Entrez le nombre de termes de la suite de Fibonacci à afficher \n(ou tapez 'exit' pour quitter) : ");
     }
 
-    public void afficherSuite(String methode, int nombreDeTermes) {
+    public void afficherSuite(String methode, BigInteger nombreDeTermes) {
         if ("itérative".equalsIgnoreCase(methode)) {
             setCalculateur(new FibonacciIteratif());
         } else if ("récursive".equalsIgnoreCase(methode)) {
@@ -59,11 +59,11 @@ public class ControleurFibonacci {
         } else {
             throw new IllegalArgumentException("Méthode inconnue: " + methode);
         }
-        BigInteger[] suite = calculateur.calculerSuite(nombreDeTermes);
+        BigInteger[] suite = calculateur.calculerSuite(nombreDeTermes.intValue());
         FormatteurSortie.afficher(suite);
     }
 
-    public BigInteger[] getSuite(String methode, int nombreDeTermes) {
+    public BigInteger[] getSuite(String methode, BigInteger nombreDeTermes) {
         if ("itérative".equalsIgnoreCase(methode)) {
             setCalculateur(new FibonacciIteratif());
         } else if ("récursive".equalsIgnoreCase(methode)) {
@@ -71,7 +71,7 @@ public class ControleurFibonacci {
         } else {
             throw new IllegalArgumentException("Méthode inconnue: " + methode);
         }
-        return calculateur.calculerSuite(nombreDeTermes);
+        return calculateur.calculerSuite(nombreDeTermes.intValue());
     }
 
     public void setCalculateur(CalculateurFibonacci calculateur) {
