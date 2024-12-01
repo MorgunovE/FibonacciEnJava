@@ -6,7 +6,6 @@ package com.projet.fibonacci.erreur;
  * Cette classe représente une exception spécifique pour les erreurs survenant lors du calcul de la suite de Fibonacci.
  * </p>
  *
- * @author Evgenii Morgunov
  * @version 2.0
  * @since 2024-11-30
  */

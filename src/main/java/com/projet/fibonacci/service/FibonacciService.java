@@ -13,7 +13,6 @@ import java.math.BigInteger;
  *
  * @version 2.0
  * @since 2024-11-30
- * @author Evgenii Morgunov
  */
 public class FibonacciService {
 

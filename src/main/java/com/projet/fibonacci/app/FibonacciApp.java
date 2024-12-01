@@ -14,7 +14,6 @@ import org.apache.logging.log4j.Logger;
  * Cette classe initialise les composants nécessaires et démarre l'application.
  * </p>
  *
- * @author Evgenii Morgunov
  * @version 2.0
  * @since 2024-11-30
  */

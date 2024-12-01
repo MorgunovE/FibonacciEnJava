@@ -17,7 +17,6 @@ import static org.mockito.Mockito.*;
  *
  * @version 2.0
  * @since 2024-11-30
- * @autor Evgenii Morgunov
  */
 public class FibonacciAppTest {
 

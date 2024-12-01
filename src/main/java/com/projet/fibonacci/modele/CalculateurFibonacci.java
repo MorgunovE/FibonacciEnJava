@@ -11,7 +11,6 @@ import java.math.BigInteger;
  *
  * @version 2.0
  * @since 2024-11-30
- * @autor Evgenii Morgunov
  */
 public interface CalculateurFibonacci {
 

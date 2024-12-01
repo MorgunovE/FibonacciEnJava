@@ -1,0 +1,11 @@
+com.projet.fibonacci.app
+com.projet.fibonacci.controleur
+com.projet.fibonacci.erreur
+com.projet.fibonacci.integration
+com.projet.fibonacci.modele
+com.projet.fibonacci.performance
+com.projet.fibonacci.service
+com.projet.fibonacci.unit
+com.projet.fibonacci.util
+com.projet.fibonacci.validation
+com.projet.fibonacci.vue

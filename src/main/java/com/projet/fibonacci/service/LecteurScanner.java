@@ -10,7 +10,6 @@ import java.util.Scanner;
  *
  * @version 2.0
  * @since 2024-11-30
- * @author Evgenii Morgunov
  */
 public class LecteurScanner implements LecteurEntree {
 

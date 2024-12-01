@@ -19,7 +19,6 @@ import java.math.BigInteger;
  * et la délégation des calculs au service approprié.
  * </p>
  *
- * @author Evgenii Morgunov
  * @version 2.0
  * @since 2024-11-30
  */
