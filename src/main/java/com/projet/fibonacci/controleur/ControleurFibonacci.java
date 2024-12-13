@@ -24,9 +24,24 @@ import java.math.BigInteger;
  */
 public class ControleurFibonacci {
 
+    /**
+     * Logger pour afficher les messages de log.
+     */
     private static final Logger logger = LogManager.getLogger(ControleurFibonacci.class);
+
+    /**
+     * Le lecteur d'entrée pour lire les données de l'utilisateur.
+     */
     private final LecteurEntree lecteurEntree;
+
+    /**
+     * Le service de calcul de Fibonacci.
+     */
     private final FibonacciService fibonacciService;
+
+    /**
+     * Le calculateur de Fibonacci à utiliser.
+     */
     private CalculateurFibonacci calculateur;
 
     /**

@@ -19,8 +19,19 @@ import org.apache.logging.log4j.Logger;
  */
 public class FibonacciApp {
 
+    /**
+     * Logger pour afficher les messages de log.
+     */
     private static final Logger logger = LogManager.getLogger(FibonacciApp.class);
+
+    /**
+     * Le lecteur d'entrée pour lire les données de l'utilisateur.
+     */
     private final LecteurEntree lecteurEntree;
+
+    /**
+     * Le service de calcul de Fibonacci.
+     */
     private final FibonacciService service;
 
     /**

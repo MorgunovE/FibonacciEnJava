@@ -16,7 +16,14 @@ import java.math.BigInteger;
  */
 public class FibonacciService {
 
+    /**
+     * Le contrôleur de Fibonacci.
+     */
     private final ControleurFibonacci controleur;
+
+    /**
+     * Le chronomètre pour mesurer la durée des calculs.
+     */
     private final Chronometre chronometre;
 
     /**
